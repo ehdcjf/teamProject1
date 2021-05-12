@@ -1,1 +1,11 @@
-index.html
+<link rel="stylesheet" href="../index.css">
+{% if isLogin %}
+  {{userid}}
+  <img src="{{userinfo.userimage}}" alt="회원이미지">
+  <a href="/user/logout">로그아웃</a>
+  <a href="/user/info">회원정보</a>
+  {% else %}
+  <a href="/user/login">로그인</a>
+  <a href="/user/join">회원가입</a>
+{% endif %}
+  <a href="/board/list?page=1" id="goList">게시판가기</a>
